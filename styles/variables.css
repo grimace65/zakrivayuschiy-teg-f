@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
     --main-font: 'Inter-Variable';
-    --accent-font: 'PressStart2P-Regular';
+    --accent-font: 'PressStart2P';
     --bg-color: #E7E7E7;
     --bg-image: repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px), 
     repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
@@ -9,5 +9,5 @@
     --text-stroke-color: #fff;
     --contour-color: #000;
     --animation-fill-color: #FF0000;
-    --mix-blend-mode-font-color: #fff;
+    ---mix-blend-mode-font-color: #fff;
 }

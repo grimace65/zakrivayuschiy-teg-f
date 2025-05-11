@@ -13,6 +13,8 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 */
 
 .page {
+  display: flex;
+  flex-direction: column;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-color: var(--bg-color, #E7E7E7);
@@ -23,40 +25,34 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 }
 
 .header {
-  block-size: clamp(32.9375rem, 31.8592rem + 4.6009vw, 36rem);
-  padding-top: 100px;
-  padding-bottom: 100px;
-  font-family: var(--accent-font, sans-serif);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-container {
+  block-size: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-family: var(--accent-font, sans-serif), sans-serif;
+  align-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: #fff;
-  block-size: 100%;
   inline-size: clamp(320px, 100%, 700px);
   border: 2px #000 solid;
 }
 
 .header-logo {
-  font-size: clamp(3.0625rem, 2.6444rem + 1.784vw, 4.25rem);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-transform: uppercase;
 }
 
 .header-title {
-  font-size: clamp(0.875rem, 0.6329rem + 1.0329vw, 1.5625rem);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   margin-block-start: 20px;
   text-transform: uppercase;
 }
 
 .main {
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, sans-serif), sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +77,7 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 .image-label {
   position: absolute;
   z-index: 1;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, sans-serif), sans-serif;
   font-size: 14px;
   top: clamp(1.5625rem, 1.5185rem + 0.1878vw, 1.6875rem);
   right: clamp(0.8125rem, 0.5484rem + 1.1268vw, 1.5625rem);
@@ -155,18 +151,15 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   margin-inline-end: 25px;
   line-height: 21px;
   font-variation-settings: 'wght' 400;
-}
-
-.card__description {
   margin-block-start: 25px;
-  margin-block-end: 27px;
 }
 
-.card__addition {
-  margin-block-end: 25px;
+.card-info:last-of-type {
+  margin-block-start: 27px;
 }
 
 .buttons-container {
+  margin-block-start: 25px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -174,25 +167,22 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   gap: 6px;
   margin-inline-end: 25px;
   margin-block-end: 25px;
-  font-family: var(--accent-font, sans-serif);
+  font-family: var(--accent-font, sans-serif), sans-serif;
   font-size: 14px;
 }
 
-.card__like-button {
+.button {
   position: relative;
-  inline-size: 130px;
-  block-size: 38px;
-  border: 2px #000 solid;
-  background-color: transparent;
-  text-transform: capitalize;
   overflow: hidden;
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  border: 2px #000 solid;
 }
 
-.card__like-button::before {
+.button::before {
   content: "";
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   right: 0;
@@ -202,24 +192,31 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   transition: transform 0.5s ease-in-out;
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
   transition: box-shadow 0.3s ease;
 }
 
-.card__like-button:hover::before {
+.button:hover::before {
+  z-index: 0;
   transform: translateX(0);
   transition: transform 0.5s ease-in-out;
 }
 
-.button__text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.button-info {
   color: var(--mix-blend-mode-font-color, #fff);
   mix-blend-mode: difference;
+}
+
+.card__like-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 130px;
+  block-size: 38px;
+  background-color: transparent;
+  text-transform: capitalize;
 }
 
 .card__icon-button {
@@ -246,58 +243,58 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 
 .core {
   fill: transparent;
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s ease 0.03s;
 }
 
 .like-icon:hover .core {
   cursor: pointer;
   fill: var(--contour-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .like-icon:active .core {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .like-icon.is-liked .core {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s;
+  transition: fill 0.3s ease;
 }
 
 .like-icon:hover .main-body {
   cursor: pointer;
   fill: var(--contour-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .like-icon:active .main-body {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .like-icon.is-liked .main-body {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s ease 0.05s;
 }
 
 .contour {
   fill: var(--contour-color);
-  transition: fill 0.1s;
+  transition: fill 0.1s ease;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.06s;
+  transition: fill 0.3s ease 0.06s;
 }
 
 .like-icon.is-liked .heart {
@@ -320,7 +317,6 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 }
 
 .save-button {
-  position: relative;
   inline-size: 310px;
   padding: 0;
   display: flex;
@@ -329,44 +325,13 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   padding-bottom: 15px;
   padding-top: 15px;
   gap: 8px;
-  margin-top: 50px;
   background-color: #fff;
-  border: 2px #000 solid;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.save-button::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.save-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
-  transition: box-shadow 0.3s ease;
-}
-
-.save-button:hover::before {
-  z-index: 0;
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
+  margin-bottom: clamp(6.25rem, 6.184rem + 0.2817vw, 6.4375rem);
 }
 
 .save-button-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif), sans-serif;
   font-size: 14px;
-  color: var(--mix-blend-mode-font-color, #fff);
-  mix-blend-mode: difference;
 }
 
 .floppy-icon {
@@ -375,7 +340,6 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   color: var(--mix-blend-mode-font-color, #fff);
   mix-blend-mode: difference;
 }
-
 
 @media (width > 375px) {
   .save-button {
@@ -422,52 +386,19 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 }
 
 .dialog-text {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   line-height: 150%;
 }
 
 .dialog-button {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font, sans-serif), sans-serif;
   font-size: 14px;
-  position: relative;
   text-transform: uppercase;
-  border: 2px #000 solid;
   inline-size: 100%;
   block-size: 38px;
   background-color: #fff;
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.dialog-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #000;
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog-button:focus {
-  outline: none;
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
-  transition: box-shadow 0.3s ease;
-}
-
-.dialog-button:hover::before {
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
-}
-
-.dialog-button-text {
-  color: var(--mix-blend-mode-font-color, #fff);
-  mix-blend-mode: difference;
 }
 
 .dialog__icon {

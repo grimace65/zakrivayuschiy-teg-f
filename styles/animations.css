@@ -16,9 +16,9 @@
     to {
       scale: 1.25;
     }
-  }
+}
   
-  @keyframes sparks {
+@keyframes sparks {
     from {
       opacity: 0
     }
@@ -26,4 +26,4 @@
     to {
       opacity: 1;
     }
-  }
+}
