@@ -7,5 +7,23 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
 */
+@keyframes scaling {
+    from {
+      scale: 1;
+    }
+  
+    to {
+      scale: 1.25;
+    }
+  }
+  
+  @keyframes sparks {
+    from {
+      opacity: 0
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
