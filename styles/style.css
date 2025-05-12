@@ -243,58 +243,58 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
 
 .core {
   fill: transparent;
-  transition: fill 0.3s ease 0.03s;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .like-icon:hover .core {
   cursor: pointer;
   fill: var(--contour-color);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .core {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .core {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .main-body {
   fill: transparent;
-  transition: fill 0.3s ease;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   cursor: pointer;
   fill: var(--contour-color);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .main-body {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .main-body {
   cursor: pointer;
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease 0.05s;
+  transition: fill 0.3s ease-in 0.05s;
 }
 
 .contour {
   fill: var(--contour-color);
-  transition: fill 0.1s ease;
+  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s ease 0.06s;
+  transition: fill 0.3s ease-in 0.06s;
 }
 
 .like-icon.is-liked .heart {
@@ -308,12 +308,6 @@ padding: clamp(120px, 10vw, 128px) clamp(14px, calc(14px + (106.5 * (100vw - 375
   animation: sparks 0.3s ease-in;
   animation-delay: 0.3s;
   animation-iteration-count: 1;
-}
-
-.footer {
-  display: flex;
-  justify-content: center;
-  margin-block-end: clamp(6.25rem, 6.184rem + 0.2817vw, 6.4375rem);
 }
 
 .save-button {
